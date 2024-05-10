@@ -16,5 +16,13 @@ public class demoPrimitives {
     System.out.println(divide);
     int remainder = 7 % 2;
     System.out.println(remainder);
+
+    // String stores text
+    String q = "Hello", w = " World";
+    System.out.println(q+w);
+    String e = "I am ";
+    String r = "Alan.";
+    String er = e + r;
+    System.out.println(er);
   }
 }
