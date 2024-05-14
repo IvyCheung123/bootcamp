@@ -1,4 +1,4 @@
-public class demoConditional {
+public class demoIf {
   public static void main(String[] args) throws Exception {
     // Conditional: if
     int x = 3;
