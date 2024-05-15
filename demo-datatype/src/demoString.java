@@ -111,5 +111,16 @@ public class demoString {
     if (s5.charAt(0) == 'w' && s5.charAt(1) == 'e' && s5.charAt(2) == 'l') {
       System.out.println("yes");
     }
+
+    // equals() compares content, == compares memory location
+    // why String " " uses equals() but not == ?
+    // why char ' ' uses == but not equals() ?
+    String ss = "welcome";
+    String sub = ss.substring(0, 3);
+    if (ss == sub) {
+      System.out.println("ss == sub");
+    } else {
+      System.out.println("false");
+    }
   }
-}
+}  
