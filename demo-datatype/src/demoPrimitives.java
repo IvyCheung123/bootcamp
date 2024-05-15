@@ -1,6 +1,6 @@
 public class demoPrimitives {
   public static void main(String[] args) {
-    // number / string (text)
+    // number
     // int is a data type that declaring the type of value of x can be stored.
     int x = 3;
     // int y = 0.5; // y cannot store non-integer number
@@ -16,15 +16,6 @@ public class demoPrimitives {
     System.out.println(divide);
     int remainder = 7 % 2;
     System.out.println(remainder);
-
-    // Primitive: String (use double quote to declare a String value)
-    // String stores text
-    String q = "Hello", w = " World";
-    System.out.println(q + w);
-    String e = "I am ";
-    String r = "Alan.";
-    String er = e + r;
-    System.out.println(er);
 
     // 2024.05.10
     // Primitive: double
@@ -87,6 +78,8 @@ public class demoPrimitives {
     System.out.println("float 10.5f = " + f5);
     // float f6 = 10.5f + 10.5; // error
     // float + double -> double, cannot assign double to float
+    float f7 = 10.5f + 10L; // float + long -> float
+    System.out.println(f7);
     double d7 = 99.99d; // same as double double6 = 99.99;
     System.out.println("double 99.99d = " + d7);
 

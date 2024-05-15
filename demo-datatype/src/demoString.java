@@ -1,5 +1,15 @@
 public class demoString {
   public static void main(String[] args) {
+    // String (use double quote to declare a String value)
+    // String stores text
+    // String is not Primitive data type
+    String q = "Hello", w = " World";
+    System.out.println(q + w);
+    String e = "I am ";
+    String r = "Alan.";
+    String er = e + r;
+    System.out.println(er);
+
     double price = 9.99;
     String item = "Book";
     String description = "The " + item + "'s cost = $" + price;
@@ -24,11 +34,6 @@ public class demoString {
     // Method 2: equals()
     String s1 = "hello";
     String s2 = "hello";
-    if (s1.equals(s2)) {
-      System.out.println("They are having same String value");
-    } else {
-      System.out.println("They are not with same value");
-    }
     // ! means NOT
     if (!s1.equals(s2)) {
       System.out.println("They are not with same value");
@@ -109,18 +114,51 @@ public class demoString {
      */
     // charAt()
     if (s5.charAt(0) == 'w' && s5.charAt(1) == 'e' && s5.charAt(2) == 'l') {
-      System.out.println("yes");
+      System.out.println("yes\n");
     }
 
-    // equals() compares content, == compares memory location
-    // why String " " uses equals() but not == ?
-    // why char ' ' uses == but not equals() ?
-    String ss = "welcome";
-    String sub = ss.substring(0, 3);
-    if (ss == sub) {
-      System.out.println("ss == sub");
-    } else {
-      System.out.println("false");
-    }
+    // equals() compares content, while == compares object or memory location
+    String z1 = "welcome";
+    String z2 = "welcome";
+    String z3 = "wel";
+
+    String z4 = new String("welcome");
+    String z5 = new String("welcome");
+    String z6 = new String ("wel");
+
+    String z7 = z1.substring(0, 7); // "welcome"
+    String z8 = z1.substring(0, 3); // "wel"
+    String z9 = z8.substring(0, 3); // "wel"
+
+    System.out.println(z1.equals(z2) && z1.equals(z4) && z3.equals(z6) && z1.equals(z7) && z6.equals(z8)); // true
+    System.out.println(z1 == z2); // true -> same location with same sub-location
+    System.out.println(z1 == z3); // false -> same location but different sub-location (welcome vs wel)
+    System.out.println(z1 == z4); // false -> new location, so different location
+    System.out.println(z4 == z5); // false -> two new independent location, so different location
+    System.out.println(z1 == z7); // true -> z7 point to z1, same location
+    System.out.println(z3 == z8); // false -> z8 point to z1 location, z1 and z3 are different location
+    System.out.println(z8 == z9); // true -> z9 point to z8, same location
+
+    System.out.println("\b");
+    // Primitives are compared with ==
+    // Convert char to wrapper classes Character to use equals()
+    /*
+     * String z1 = "welcome";
+     * String z2 = "welcome";
+     * String z3 = "wel";
+     * 
+     * String z6 = new String ("wel");
+     */
+    char x1 = 'w';
+    char x2 = z1.charAt(0); // 'w'
+    char x3 = z3.charAt(0); // 'w'
+    char x4 = z6.charAt(0); // 'w'
+    System.out.println(x1 == x2); // true
+    System.out.println(x1 == x3); // true
+    System.out.println(x1 == x4); // true -> ???
+    Character y1 = 'w';
+    Character y2 = z1.charAt(0); // 'w'
+    System.out.println(y1 == y2); // true
+    System.out.println(y1.equals(y2)); // true
   }
 }  
