@@ -92,5 +92,6 @@ public class demoPrimitives {
 
     // In conclude, higher level of data type cannot assign to lower level of data type
     // boolean < byte < short < char < int < long < float < double
+    // Can upgrade: byte -> short -> int -> long -> float -> double
   }
 }

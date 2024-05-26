@@ -39,9 +39,8 @@ public class demoLoop {
         }
 
         System.out.println("\nBelow is sum = 55: ");
-        // 1 + 2 + 3 + 5 ... 10
+        // 1 + 2 + 3 + 4 + 5 ... 10
         int sum = 0;
-        // for (int i = 0; i < 55; i++) { sum++; }
         for (int i = 0; i < 11; i++) {
             sum += i;
         }

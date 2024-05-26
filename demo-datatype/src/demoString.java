@@ -105,6 +105,9 @@ public class demoString {
       System.out.println("yes");
     }
     // chain method
+    // String has method, but
+    // length() -> int Primitives -> no method
+    // charAt() -> char Primitives -> no method
     System.out.println(s5.substring(0, 3).length()); // 3
     System.out.println(s5.substring(0, 3).charAt(1)); // 'e'
     /*
@@ -160,5 +163,73 @@ public class demoString {
     Character y2 = z1.charAt(0); // 'w'
     System.out.println(y1 == y2); // true
     System.out.println(y1.equals(y2)); // true
+
+    System.out.println("\nisEmpty(): ");
+
+    // isEmpty()
+    // Empty String -> ""
+    String a1 = "";
+    System.out.println(a1.isEmpty()); // true
+    System.out.println(a1.length() == 0); // true
+    String a2 = "abc";
+    System.out.println(a2.isEmpty()); // false
+
+    System.out.println("\nisBlank(): ");
+
+    // isBlank()
+    String a3 = "";
+    System.out.println(a3.isEmpty()); // true
+    a3 = " ";
+    System.out.println(a3.isBlank()); // true
+    System.out.println(a3.isEmpty()); // false
+
+    System.out.println("\nsubstring(): ");
+
+    // substring(0, 3)
+    // substring(0)
+    String b1 = "hello";
+    System.out.println(b1.substring(0)); // from index 0 to the end -> "hello"
+    System.out.println(b1.substring(0, 3)); // "hel"
+
+    System.out.println("\ntoUpperCase() or toLowerCase(): ");
+
+    // hello -> HELLO
+    System.out.println(b1.toUpperCase()); // "HELLO"
+    String b2 = "HeLLo";
+    System.out.println(b2.toLowerCase()); // "hello"
+
+    System.out.println("\nreplace(): ");
+
+    System.out.println(b1.replace('l', 'x')); // "hexxo"
+    System.out.println(b1.replace("ll", "yyyyy")); // "heyyyyyo"
+    System.out.println(b1.replace("yy", "abc")); // no "yy" found -> no replace -> "hello"
+
+    System.out.println("\ncontains(): ");
+
+    System.out.println(b1.contains("ell")); // true
+
+    System.out.println("\nstartWith() & endsWith(): ");
+
+    System.out.println(b1.startsWith("he")); // true
+    System.out.println(b1.endsWith("o")); // true
+
+    System.out.println("\ntrim(): ");
+    // trim(), removing the space characters at the head / tail of the String
+    String c1 = "   Hello, bootcamp  !!!  ";
+    System.out.println(c1.trim()); // "Hello, bootcamp  !!!"
+
+    String[] strings = new String[] {"hello", "abcijk", "vincent", "HeLLo", "  HELLO   "};
+    // how many strings contains "ELL", but ignore upper and lower case
+    // "eLL" or "ell" or "Ell" ...
+    int count = 0;
+    for (int i = 0; i < strings.length; i++) {
+      strings[i] = strings[i].toUpperCase();
+    }
+    for (int i = 0; i < strings.length; i++) {
+      if (strings[i].contains("ELL")) {
+        count++;
+      }
+    }
+    System.out.println(count);
   }
 }  

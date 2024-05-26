@@ -44,11 +44,12 @@ public class demoNestedLoop {
     // 1 - 20
     // 1 3 5 7 9 12 14 16 18 20
     for (int i = 0; i < 21; i++) {
-      if (i > 0 && i < 10 && i % 2 == 1) {
-        System.out.println(i);
-      } else if (i > 10 && i % 2 == 0) {
-        System.out.println(i);
+      if (i <= 10 && i % 2 == 0) {
+        continue;
+      } else if (i > 10 && i % 2 == 1) {
+        continue;
       }
+      System.out.print(i + " ");
     }
 
     System.out.println("\b");
