@@ -30,15 +30,18 @@ public class demoSwitch {
         x += 10;
       case 'B':
         x += 10;
+      case 'C':
+        x += 20;
       default:
-        x += 10;
+        x += 30;
     }
-    System.out.println(x); // grade 'B', print 0+10+10=20
+    System.out.println(x); // grade 'B', print 0 + 10 + 20 + 30 = 60
 
     // Scanner
     Scanner input = new Scanner(System.in);
     System.out.print("Please input a number: ");
     int month = input.nextInt(); // line of input -> int
     System.out.println("month = " + month);
+    input.close();
   }
 }

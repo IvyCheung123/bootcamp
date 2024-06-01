@@ -99,6 +99,6 @@ public class demoOperator {
 
     int k = 4;
     int result3 = k++ * 7 * ++k;
-    System.out.println(result3); // (4 * 7) * 6 = 168
+    System.out.println(result3); // (4 * 7) * (5 + 1) = 168
   }
 }

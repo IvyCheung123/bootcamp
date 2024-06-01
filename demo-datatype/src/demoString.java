@@ -145,20 +145,16 @@ public class demoString {
     System.out.println("\b");
     // Primitives are compared with ==
     // Convert char to wrapper classes Character to use equals()
-    /*
-     * String z1 = "welcome";
-     * String z2 = "welcome";
-     * String z3 = "wel";
-     * 
-     * String z6 = new String ("wel");
-     */
+    
     char x1 = 'w';
     char x2 = z1.charAt(0); // 'w'
+    System.out.println((int) x1); // 119
+    System.out.println((int) x2); // 119
     char x3 = z3.charAt(0); // 'w'
     char x4 = z6.charAt(0); // 'w'
-    System.out.println(x1 == x2); // true
-    System.out.println(x1 == x3); // true
-    System.out.println(x1 == x4); // true -> ???
+    System.out.println(x1 == x2); // true, 119 = 119 (ASCII)
+    System.out.println(x1 == x3); // true, 119 = 119 (ASCII)
+    System.out.println(x1 == x4); // true, 119 = 119 (ASCII)
     Character y1 = 'w';
     Character y2 = z1.charAt(0); // 'w'
     System.out.println(y1 == y2); // true
@@ -218,18 +214,58 @@ public class demoString {
     String c1 = "   Hello, bootcamp  !!!  ";
     System.out.println(c1.trim()); // "Hello, bootcamp  !!!"
 
+    System.out.println();
+
     String[] strings = new String[] {"hello", "abcijk", "vincent", "HeLLo", "  HELLO   "};
     // how many strings contains "ELL", but ignore upper and lower case
     // "eLL" or "ell" or "Ell" ...
     int count = 0;
     for (int i = 0; i < strings.length; i++) {
-      strings[i] = strings[i].toUpperCase();
-    }
-    for (int i = 0; i < strings.length; i++) {
-      if (strings[i].contains("ELL")) {
+      if (strings[i].toUpperCase().contains("ELL")) {
         count++;
       }
     }
     System.out.println(count);
+
+    System.out.println();
+
+    for (int i = 0; i < strings.length; i++) {
+      if (strings[i].trim().equalsIgnoreCase("hello")) { // equals to "hello" but ignore upper and lower case
+        System.out.println(strings[i]);
+      }
+    }
+
+    String str = "helloll";
+    System.out.println(str.indexOf("ll")); // 2, first pattern
+    System.out.println(str.indexOf("l")); // 2, first character of 'l'
+    System.out.println(str.indexOf("ll", 4)); // 5
+    System.out.println(str.indexOf("ll", 6)); // -1
+    System.out.println(str.indexOf(101)); // 1, ascii 'e' -> 101
+
+    System.out.println(str.lastIndexOf("ll")); // 5, last pattern of "ll"
+    System.out.println(str.lastIndexOf('e')); // 1
+
+    String str2 = "abc";
+    str2 += "def";
+    System.out.println(str2); // abcdef
+
+    String str3 = "abc";
+    str3 = str3.concat("def"); // better performance, concatenates 連接
+    System.out.println(str3); // abcdef
+
+    System.out.println(str2.compareTo(str3)); // 0, value of str2 = value of str3
+    System.out.println(str2.equals(str3)); // true
+    System.out.println(str2 == str3); // false
+
+    String str4 = "abc";
+    String str5 = "abc";
+    System.out.println(str4.compareTo(str5)); // 0
+    System.out.println(str4.equals(str5)); // true
+    System.out.println(str4 == str5); // true
+
+    String[] s10 = new String[] {"abc", "def", "hello", "world"};
+    for (String s11 : s10) { // String[] -> String
+      System.out.println(s11);
+    }
   }
 }  

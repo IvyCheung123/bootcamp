@@ -141,5 +141,92 @@ public class demoArray {
       }
     }
     System.out.println("fourB = " + fourC);
+
+    // average
+    int[] arr5 = new int[] {4, 8, 3};
+    int sum5 = 0;
+    int count5 = 0;
+    for (int i = 0; i < arr.length; i++) {
+      sum5 += arr5[i]; // 15
+      count5++; // 3
+    }
+    System.out.println(sum5 / count5); // 15 / 3 = 5
+
+    // swapping in array
+    int temp = 0;
+
+    int[] arr6 = new int[] {6, 10, -4, 15};
+    // swap -4 and 6 -> [-4, 10, 6, 15]
+    temp = arr6[2];
+    arr6[2] = arr6[0];
+    arr6[0] = temp;
+    System.out.println(Arrays.toString(arr6)); // [-4, 10, 6, 15]
+
+    // Level 1:
+    // move -4 to the tail of the array -> [10, 6, 15, -4]
+    for (int i = 0; i < arr6.length - 1; i++) {
+      temp = arr6[i];
+      arr6[i] = arr6[i + 1];
+      arr6[i + 1] = temp;
+    }
+    System.out.println(Arrays.toString(arr6)); // [10, 6, 15, -4]
+
+    // Level 2:
+    // move the max to the tail
+    // Now: [10, 6, 15, -4]
+    // 1st round: [6, 10, 15, -4]
+    // 2nd round: [6, 10, 15, -4]
+    // 3rd round: [6, 10, -4, 15]
+    for (int i = 0; i < arr6.length - 1; i++) {
+      if (arr6[i] > arr6[i + 1]) {
+        temp = arr6[i];
+        arr6[i] = arr6[i + 1];
+        arr6[i + 1] = temp;
+      }
+    }
+    System.out.println(Arrays.toString(arr6)); // [6, 10, -4, 15]
+
+    // Level 3:
+    // Now: [6, 10, -4, 15]
+    // Sorting -> [-4, 6, 10, 15]
+    // for loop
+    // nested loop
+    for (int i = 0; i < arr6.length - 1; i++) { // 0 1 2
+      for (int j = i + 1; j < arr6.length; j++) { // 1 2 3
+    /* for (int j = 0; j < arr6.length - 1 - i; j++) {
+        if (arr6[j] > arr6[j + 1]) {
+          temp = arr6[j];
+          arr6[j] = arr6[j + 1];
+          arr6[j + 1] = temp;
+        }
+    */
+        if (arr6[i] > arr6[j]) {
+          temp = arr6[i];
+          arr6[i] = arr6[j];
+          arr6[j] = temp;
+        }
+      }
+    }
+    System.out.println(Arrays.toString(arr6)); // [-4, 6, 10, 15]
+    
+    // swap char value
+    String str7 = "hello"; // swap e and o -> "holle"
+    // char[] arr7 = new char[str7.length()];
+    char chr7 = ' ';
+    /*
+    for (int i = 0; i < str7.length(); i++) {
+      arr7[i] = str7.charAt(i);
+    }
+    */
+    // Alternative (String -> char[])
+    char[] arr7 = str7.toCharArray(); // ['h', 'e', 'l', 'l', 'o']
+    System.out.println(arr7); // hello
+    System.out.println("arr7 = " + arr7); // [C@3d4eac69
+    System.out.println("arr7 = " + Arrays.toString(arr7)); // [h, e, l, l, o]
+    chr7 = arr7[1];
+    arr7[1] = arr7[4];
+    arr7[4] = chr7;
+    str7 = String.valueOf(arr7); // assign a new String value to variable str7
+    System.out.println(str7); // "holle"
   }
 }

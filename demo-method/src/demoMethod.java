@@ -34,7 +34,11 @@ public class demoMethod {
 
     // Call method (circleArea)
     System.out.println("\ndouble circleArea() method: ");
-    System.out.println(circleArea(5)); // 3.14 * (5 * 5) = 78.5
+    System.out.println(circleArea(5)); // 3.14 * (5 * 5) = 78.53981633974483
+
+    // double * double -> is a problem
+    // BigDecimal -> solution
+    System.out.println(0.2 * 0.1); // 0.020000000000000004
   }
 
   public static int sum(int x, int y) {
@@ -114,8 +118,11 @@ public class demoMethod {
   }
 
   public static double circleArea(int radius) {
+    /*
     double pi = 3.14;
     double area = pi * (radius * radius);
     return area;
+     */
+    return (radius * radius) * Math.PI; // int * int * double -> double
   }
 }

@@ -66,5 +66,59 @@ public class demoNestedLoop {
         }
       }
       System.out.println(idx);
+
+      // *****
+      for (int i = 0; i < 5; i++) {
+        System.out.print("*");
+      }
+      System.out.println("\n");
+
+      // *****
+      // *****
+      // *****
+      // *****
+      // *****
+      for (int row = 0; row < 5; row++) {
+        for (int column = 0; column < 5; column++) {
+          System.out.print("*");
+        }
+        System.out.println();
+      }
+
+      System.out.println();
+
+      // *****
+      // ****
+      // ***
+      // **
+      // *
+      for (int row = 0; row < 5; row++) {
+        for (int column = 0; column < 5 - row; column++) {
+          System.out.print("*");
+        }
+        System.out.println();
+      }
+
+      System.out.println();
+
+      // *
+      // **
+      // ***
+      // ****
+      // ***
+      // **
+      // *
+      for (int row = 1; row <= 4; row++) { // 1 2 3 4
+          for (int column = 1; column <= row; column++) {
+            System.out.print("*");
+          }
+          System.out.println();
+      }
+      for (int i = 3; i >= 1; i--) { // 3 2 1
+        for (int j = 1; j <= i; j++) { // 1 2 3
+          System.out.print("*");
+        }
+        System.out.println();
+      }
   }
 }
