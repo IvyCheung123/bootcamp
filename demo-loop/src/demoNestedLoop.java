@@ -98,7 +98,6 @@ public class demoNestedLoop {
         }
         System.out.println();
       }
-
       System.out.println();
 
       // *
@@ -108,8 +107,8 @@ public class demoNestedLoop {
       // ***
       // **
       // *
-      for (int row = 1; row <= 4; row++) { // 1 2 3 4
-          for (int column = 1; column <= row; column++) {
+      for (int i = 0; i < 4; i++) { // 1 2 3 4
+          for (int column = 0; column < i; column++) {
             System.out.print("*");
           }
           System.out.println();

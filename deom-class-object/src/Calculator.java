@@ -1,10 +1,23 @@
+import java.math.BigDecimal;
+
 public class Calculator {
   private int x;
   private int y;
 
   // Static method -> Instance method
   public static int sum(int x, int y) {
+    System.out.println("sum(int x, int y) is running ...");
     return x + y;
+  }
+
+  public static double sum(double x, double y) {
+    System.out.println("sum(double x, double y) is running ...");
+    return BigDecimal.valueOf(x).multiply(BigDecimal.valueOf(y)).doubleValue();
+  }
+
+  public static double sum(float x, double y) {
+    System.out.println("sum(float x, double y) is running ...");
+    return BigDecimal.valueOf(x).multiply(BigDecimal.valueOf(y)).doubleValue();
   }
 
   // Instance method
@@ -15,11 +28,25 @@ public class Calculator {
     this.y = y;
   }
   
-  public int sum2() {
+  public int sum() { // 唔會撞名 -> sum() != sum(int x, int y)
     return this.x + this.y;
   }
   public int multiply() {
     return this.x * this.y;
+  }
+
+  // testing
+  public static void test1(String[] args) {
+    for (int i = 0; i < args.length; i++) {
+      System.out.println(args[i]);
+    }
+  }
+
+  public static void test2(String... args) { // String... and String[] are same type
+    // for-each
+    for (String s : args) {
+      System.out.println(s);
+    }
   }
 
   public static void main(String[] args) {
@@ -31,7 +58,19 @@ public class Calculator {
     c1.setX(2);
     c1.setY(3);
 
-    System.out.println(c1.sum2()); // 2 + 3 = 5
+    System.out.println(c1.sum()); // 2 + 3 = 5
     System.out.println(c1.multiply()); // 2 * 3 = 6
+
+    // Method overloading: same name, automatically find different data type
+    System.out.println(sum(1, 2)); // sum(int x, int y) is running ...
+    System.out.println(sum(1.0, 2.0)); // sum(double x, double y) is running ...
+    System.out.println(sum(1.0f, 2.0f)); // sum(float x, double y) is running ...
+    // String.valueOf() -> overloading
+    System.out.println(String.valueOf(10L)); // 10
+    System.out.println(String.valueOf(new char[] {'a', 'b', 'c'})); // abc
+
+    Calculator.test1(new String[] {"hello", "world"});
+    Calculator.test2(new String[] {"hello", "world"});
+    Calculator.test2("hello", "world");
   }
 }
