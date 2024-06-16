@@ -1,3 +1,5 @@
+package demo;
+
 public class demoMath {
   public static void main(String[] args) {
     // abs()

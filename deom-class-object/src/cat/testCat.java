@@ -1,3 +1,5 @@
+package cat;
+
 public class testCat {
   public static void main(String[] args) {
     // Local variable -> all die after main() is completed

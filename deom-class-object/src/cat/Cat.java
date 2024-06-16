@@ -1,3 +1,5 @@
+package cat;
+
 public class Cat { // Class name -> Name Convention -> able to describe physical object
   // status
   // attributes

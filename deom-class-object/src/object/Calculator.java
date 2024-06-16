@@ -1,3 +1,5 @@
+package object;
+
 import java.math.BigDecimal;
 
 public class Calculator {
@@ -6,17 +8,17 @@ public class Calculator {
 
   // Static method -> Instance method
   public static int sum(int x, int y) {
-    System.out.println("sum(int x, int y) is running ...");
+    System.out.println("static method sum(int x, int y) is running ...");
     return x + y;
   }
 
   public static double sum(double x, double y) {
-    System.out.println("sum(double x, double y) is running ...");
+    System.out.println("static method sum(double x, double y) is running ...");
     return BigDecimal.valueOf(x).multiply(BigDecimal.valueOf(y)).doubleValue();
   }
 
   public static double sum(float x, double y) {
-    System.out.println("sum(float x, double y) is running ...");
+    System.out.println("static method sum(float x, double y) is running ...");
     return BigDecimal.valueOf(x).multiply(BigDecimal.valueOf(y)).doubleValue();
   }
 
@@ -29,9 +31,11 @@ public class Calculator {
   }
   
   public int sum() { // 唔會撞名 -> sum() != sum(int x, int y)
+    System.out.println("instance method sum(int x, int y) is running ...");
     return this.x + this.y;
   }
   public int multiply() {
+    System.out.println("instance method multiply(int x, int y) is running ...");
     return this.x * this.y;
   }
 
@@ -72,5 +76,17 @@ public class Calculator {
     Calculator.test1(new String[] {"hello", "world"});
     Calculator.test2(new String[] {"hello", "world"});
     Calculator.test2("hello", "world");
+
+    System.out.println(Calculator.sum(3, 2)); // 5, call static method
+    Calculator c2 = new Calculator();
+    c2.setX(3); // instance method
+    c2.setY(2); // instance method
+    System.out.println(c2.sum()); // 5, call instance method
+
+    System.out.println(c2.sum(3, 2)); // 5, call static method
+
+    // Conclusion:
+    // Static method can be called by instance (object) or Class name
+    // Instance method can be called by instance (object) only
   }
 }

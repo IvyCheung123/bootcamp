@@ -1,3 +1,5 @@
+package object;
+
 public class Ball {
   private double weight;
   private String color;
