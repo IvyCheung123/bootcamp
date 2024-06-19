@@ -19,17 +19,21 @@ public class ShuffleManager {
   public void shuffle(int times) {
     Card[] shuffleCards = null;
     for (int i = 0; i < times; i++) {
-      int index = new Random().nextInt(Deck.length); // 0 - 51
-      System.out.println("Random Index = " + index);
+      int startIdx = new Random().nextInt(Deck.length - 1) + 1;
+      int endIdx = new Random().nextInt(Deck.length - startIdx) + startIdx;
       shuffleCards = new Card[Deck.length];
       int count = 0;
-      for (int j = index; j < Deck.length; j++) {
+      for (int j = startIdx; j <= endIdx; j++) {
         shuffleCards[count++] = this.cards[j];
       }
-      for (int j = 0; j < index; j++) {
+      for (int j = 0; j < startIdx; j++) {
+        shuffleCards[count++] = this.cards[j];
+      }
+      for (int j = endIdx + 1; j < Deck.length; j++) {
         shuffleCards[count++] = this.cards[j];
       }
       this.cards = shuffleCards;
     }
   }
+  
 }

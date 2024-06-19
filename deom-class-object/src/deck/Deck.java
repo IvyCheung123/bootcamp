@@ -19,14 +19,31 @@ public class Deck {
     }
   }
 
-  public void shuffle() {
+  public void shuffle(int times) {
     ShuffleManager sm = new ShuffleManager(getCards());
-    sm.shuffle(length);
+    sm.shuffle(times);
     this.cards = sm.getCards();
   }
 
   public Card[] getCards() {
     return this.cards;
+  }
+
+  public static void main(String[] args) {
+    Deck deck = new Deck();
+    /*
+    Card[] cards = deck.getCards();
+    for (Card card : cards) {
+      System.out.println(card);
+    }
+    */
+
+    deck.shuffle(100);
+    // new ShuffleManager(deck.getCards()).shuffle(100);
+    System.out.println("Card[] after shuffle(): ");
+    for (Card card : deck.getCards()) {
+      System.out.println(card);
+    }
   }
 
 }
