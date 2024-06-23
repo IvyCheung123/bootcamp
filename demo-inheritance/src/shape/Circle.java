@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 // Shape is a class containing area() abstract method
 // Circle is a class inherit Shape class
 
+// final class cannot be extended
 // public final class Circle extends Shape {
 public class Circle extends Shape {
 

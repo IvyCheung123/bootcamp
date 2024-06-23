@@ -18,8 +18,8 @@ public class demoRandom {
   public static void main(String[] args) {
     // JDK class
     // random -> usually get integer
-    int random = new Random().nextInt(3); // 0-2
-    System.out.println(random);
+    int random1 = new Random().nextInt(3); // 0-2
+    System.out.println(random1);
     int random2 = new Random().nextInt(3) + 1; // 1-3
     System.out.println(random2);
     int random3 = new Random().nextInt(3 - 1) + 1; // (0-1) + 1 -> 1-2

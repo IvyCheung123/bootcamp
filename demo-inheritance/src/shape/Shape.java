@@ -25,7 +25,7 @@ public abstract class Shape {
     System.out.println(Shape.totalArea(shapes)); // 28.274333882308138 + 25 = 53.274333882308134
 
     StringBuilder sb = new StringBuilder("hello");
-    sb.append("world");
+    sb.append("world"); // Java: You don't have to assign the return object to a reference
     System.out.println(sb); // helloworld
   }
 }
