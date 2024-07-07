@@ -3,7 +3,7 @@ package order;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
-public class Order {
+public class Order1 {
 
   // static variable (belongs to class)
   public static String prefix = "Order";
@@ -14,7 +14,7 @@ public class Order {
   private String coupon;
 
   // All Argument Constructor
-  public Order(String prefix) {
+  public Order1(String prefix) {
     this.id = ++count;
     this.items = new Item[0];
   }
@@ -74,17 +74,17 @@ public class Order {
   }
 
   public String getOrderTotal() {
-    return Order.prefix + " " + this.getId() + " (Order Total: $" + this.orderTotal() + ")";
+    return Order1.prefix + " " + this.getId() + " (Order Total: $" + this.orderTotal() + ")";
   }
 
   // toString()
   public String toString() {
-    return Order.prefix + " " + this.getId() + " " + Arrays.toString(this.items);
+    return Order1.prefix + " " + this.getId() + " " + Arrays.toString(this.items);
   }
 
   public static void main(String[] args) {
 
-    Order order1 = new Order(prefix);
+    Order1 order1 = new Order1(prefix);
     Item item1 = new Item("AAA", 96.0d, 2);
     System.out.println(item1.getItemSubtotal()); // 192.0
     order1.addItem(item1);
@@ -96,7 +96,7 @@ public class Order {
     System.out.println(order1.toString());
     System.out.println(order1.getOrderTotal()); // 192.0 + 30.0 = 222.0
     
-    Order order2 = new Order(prefix);
+    Order1 order2 = new Order1(prefix);
     Item item3 = new Item("CCC", 5.5, 5);
     System.out.println(item3.getItemSubtotal()); // 27.5
     order2.addItem(item3);

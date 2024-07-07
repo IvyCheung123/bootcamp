@@ -48,7 +48,7 @@ public class Item {
   }
 
   public String getItemSubtotal() {
-    return Order.prefix + " (" + this.getItemName() + " Subtotal: $" + this.itemSubtotal() + ")";
+    return Order1.prefix + " (" + this.getItemName() + " Subtotal: $" + this.itemSubtotal() + ")";
   }
 
   // toString()

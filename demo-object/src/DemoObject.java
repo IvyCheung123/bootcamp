@@ -14,15 +14,15 @@ public class DemoObject {
     Object object = new Object(); // Object is a super parent 萬能指針
     object = "hello";
     object = Double.valueOf(0.0d);
-    object = new Cat();
+    object = new Cat3();
 
     // All Classes extends Object.class -> inherit all methods from Object.class
-    System.out.println(new Cat().toString()); // I'm a cat.
-    System.out.println(new Dog().toString()); // Dog@74a14482
+    System.out.println(new Cat3().toString()); // I'm a cat.
+    System.out.println(new Dog3().toString()); // Dog@74a14482
     
     // Object.hashCode()
-    Cat c1 = new Cat();
-    Cat c2 = new Cat();
+    Cat3 c1 = new Cat3();
+    Cat3 c2 = new Cat3();
     System.out.println(c1); // I'm a cat.
     System.out.println(System.identityHashCode(c1)); // 356573597
     System.out.println(c1.hashCode()); // generate an int value by object reference -> 356573597
@@ -34,6 +34,27 @@ public class DemoObject {
     System.out.println(mc1.hashCode()); // 71864455
     System.out.println(mc2.hashCode()); // 71864455
     System.out.println(mc3.hashCode()); // 71832679
+
+    Object cat = new Cat3();
+    // cat Object reference indeed pointing to cat object
+    // run() instance method can only be called by object declared by Cat.class
+    // if the object reference is declared by Object.class, it cannot call run() method
+    // cat.run(); // compile error
+
+    System.out.println();
+    // downcast
+    // Cat cat2 = cat; // compile error, Java compiler cannot guranteen
+    Cat3 cat2 = (Cat3) cat;
+    cat2.run();
+
+    // Cat.class inherit Object.class method
+    System.out.println(cat2.hashCode()); // 2133927002, cat2 is pointed to cat
+    System.out.println(cat2.hashCode()); // 2133927002
+
+    // cat = new DogThree(); // Compile only check: type OK (Relationship: Object and Dog -> Parent and Child)
+    // cat2 = (CatThree) cat; // runtime error, java.lang.ClassCastException: class Dog cannot be cast to class Cat
+
+    System.out.println();
 
     String x1 = new String("abc");
     String x2 = new String("abc");

@@ -40,13 +40,13 @@ public class Book {
   }
 
   public String describe() {
-    return "Book Name: " + this.name + ", Book Publish Date: " + this.publishDate + ", Book Price: $" + this.price + ".";
+    return " Name: " + this.name + ",  Publish Date: " + this.publishDate + ",  Price: $" + this.price + ".";
   }
   // Static method
   public static void main(String[] args) {
-    Book b1 = new Book();
-    Book b2 = new Book();
-    Book b3 = new Book();
+    Book b1 = new Book ();
+    Book b2 = new Book ();
+    Book b3 = new Book ();
 
     b1.setName("Java Beginner 1");
     b1.setPublishDate(LocalDate.of(2023, 01, 01));
