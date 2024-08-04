@@ -2,19 +2,19 @@ package deck;
 
 public class Deck {
   // Player, Deck, Card
-  // public static final String[] sults = new String[] {"Diamond", "Club", "Heart", "Spade"};
+  // public static final String[] suits = new String[] {"Diamond", "Club", "Heart", "Spade"};
   // public static final String[] ranks = new String[] {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
-  public static int length = Sult.values().length * Rank.values().length;
+  public static int length = Suit.values().length * Rank.values().length;
 
   private Card[] cards;
 
   public Deck() {
     this.cards = new Card[length];
     int index = 0;
-    for (Sult sult : Sult.values()) {
+    for (Suit suit : Suit.values()) {
       for (Rank rank : Rank.values()) {
-        this.cards[index++] = new Card(sult, rank);
+        this.cards[index++] = new Card(suit, rank);
       }
     }
   }

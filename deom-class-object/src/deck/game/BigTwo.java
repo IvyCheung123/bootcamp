@@ -2,10 +2,19 @@ package deck.game;
 
 import deck.Card;
 import deck.Deck;
+import deck.Rank;
+import deck.Suit;
 
-public class BigTwo {
+public class BigTwo extends Card {
 
-  public static boolean isPourKind(Card[] cards) {
+  private Suit suit;
+  private Rank rank;
+
+  public BigTwo(Suit suit, Rank rank) {
+    super(suit, rank);
+  }
+
+  public static boolean isFourKind(Card[] cards) {
     return false;
   }
 

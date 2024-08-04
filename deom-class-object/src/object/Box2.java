@@ -2,7 +2,7 @@ package object;
 
 import java.util.Arrays;
 
-public class Box {
+public class Box2 {
   // static variable (belongs to class)
   private static String prefix = "Box";
 
@@ -16,12 +16,12 @@ public class Box {
   }
   */
 
-  public Box() {
+  public Box2() {
     this.strs = new String[0];
   }
 
   public void setName(String name) {
-    this.name = Box.prefix.concat(".").concat(name);
+    this.name = Box2.prefix.concat(".").concat(name);
   }
 
   public void setStrings(int index, String str) {
@@ -69,7 +69,7 @@ public class Box {
     String[] strs1 = new String[] {"hello", "hello"};
     Box box1 = new Box(strs1);
     */
-    Box box1 = new Box();
+    Box2 box1 = new Box2();
     box1.addStrings("hello");
     box1.addStrings("hello");
     // System.out.println(Arrays.toString(box.getStrings()));
@@ -81,7 +81,7 @@ public class Box {
     box1.deleteString("world");
     System.out.println(box1.toString());
 
-    System.out.println(Box.prefix); // Box
+    System.out.println(Box2.prefix); // Box
     box1.setName("abc");
     System.out.println(box1.getName()); // Box.abc
   }

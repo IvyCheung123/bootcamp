@@ -29,7 +29,8 @@ public class DemoCharSequence {
     System.out.println(cs2.charAt(1)); // e
     // cs2.reverse();  // reverse() is not included in CharSequence Interface
 
-    StringBuilder sb2 = (StringBuilder) cs; // run-time error
+    CharSequence cs3 = new String();
+    StringBuilder sb2 = (StringBuilder) cs3; // run-time error
     // cs point to String object now
     // but object reference sb2 is StringBuilder
   }

@@ -1,13 +1,13 @@
 import java.math.BigDecimal;
 
-public class Box { // similar to StringBuilder
+public class Box3 { // similar to StringBuilder
   private String x;
 
-  public Box() {
+  public Box3() {
     this.x = "";
   }
 
-  public Box append(String y) {
+  public Box3 append(String y) {
     this.x += y;
     return this;
   }
@@ -21,7 +21,7 @@ public class Box { // similar to StringBuilder
     sb.append("hello");
     System.out.println(sb); // hello
 
-    Box box = new Box();
+    Box3 box = new Box3();
     box.append("hello");
     System.out.println(box); // hello
 
