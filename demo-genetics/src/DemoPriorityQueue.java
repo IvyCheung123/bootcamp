@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,36 +12,38 @@ import sorting.Color2;
 public class DemoPriorityQueue {
   public static void main(String[] args) {
     Queue<String> pq = new PriorityQueue<>();
-    pq.add("def"); // [def]
-    pq.add("abc"); // [def, abc] -> [abc, def]
-    pq.add("bbb"); // [abc, def, bbb] -> [abc, bbb, def]
-    System.out.println(pq); // [abc, def, bbb] -> add() does not perform sorting
-    pq.add("aax");
-    System.out.println(pq); // [aax, abc, bbb, def]
+    pq.add("d"); // [d]
+    pq.add("a"); // [d, a] -> [a, d]
+    pq.add("b"); // [a, d, b] -> [a, b, d]
+    System.out.println(pq); // [a, d, b] -> add() does not perform sorting
+    pq.add("c");
+    System.out.println(pq); // [a, c, b, d]
 
     while (!(pq.isEmpty())) {
       System.out.println(pq.poll());
     }
-    // aax, abc, bbb, def
+    // a b c d
     // complete sorting in natural order by default when you call poll()
     // Queue: 每次都sort -> 有幾多個<E>就sort幾多次
 
     // PriorityQueue.class add() & poll() differs to LinkedList.class (different implementation)
     Queue<String> pq2 = new LinkedList<>();
-    pq2.add("def");
-    pq2.add("abc");
-    pq2.add("bbb");
-    pq2.add("aax");
-    System.out.println(pq2); // [def, abc, bbb, aax]
+    pq2.add("d");
+    pq2.add("a");
+    pq2.add("b");
+    pq2.add("c");
+    System.out.println(pq2); // [d, a, b, c]
     // Collections.sort(pq2); // Queue does not implement Comparable.interface
     // 1. Java 8 -> Stream (List)
     // 2. Convert to Array -> Arrays.sort()
     String[] str = new String[pq2.size()]; // 4
-    // if (!(pq2.isEmpty())) {
-    //   for (int i = pq2.size()) {
-    //     str += s;
-    //   }
-    // }
+    int index = 0;
+    while (!pq2.isEmpty()) {
+      str[index++] = pq2.poll();
+    }
+    System.out.println(Arrays.toString(str)); // [d, a, b, c]
+    Arrays.sort(str);
+    System.out.println(Arrays.toString(str)); // [a, b, c, d]
 
     // List
     List<String> pq3 = new LinkedList<>();
