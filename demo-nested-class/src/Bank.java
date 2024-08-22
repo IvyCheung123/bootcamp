@@ -17,7 +17,7 @@ public class Bank {
     accounts.add(account);
   }
 
-  public static class  Account {
+  public static class Account {
     private static int number = 0;
     private int accountNo;
     private double balance;

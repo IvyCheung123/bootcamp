@@ -54,7 +54,7 @@ public abstract class Shape3 {
     // Error: List<Shape3> shapes = new LinkedList<Circle>();
 
     // <? extends Shape3> -> LinkedList<Shape3或以下>
-    List<? extends Shape3> shapes2 = new LinkedList<Circle3>();
+    List<? extends Shape3> shapes2 = new LinkedList<>();
     shapes2 = new ArrayList<Square3>();
     // List<? extends Shape3> shapes2 = new LinkedList<>();
     // can be pointed to:
@@ -66,6 +66,7 @@ public abstract class Shape3 {
     List<? super Shape3> shapes3 = new LinkedList<Object>();
     shapes3.add(new Circle3(3.0d)); // Circle3 extends Shape3
     shapes3.add(new Square3(3.0d)); // Square3 extends Shape3
+    Object obj = shapes3;
 
     // shapes3 = new LinkedList<Shape3>();
     // shapes3.add(new Triangle3()); // Triangle3 NOT extends Shape3

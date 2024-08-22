@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import object.Ball;
 
 // Objective: Learn existing interface
 public class Ball2 implements Comparable<Ball2>{

@@ -19,11 +19,11 @@ public class Account {
     this.balance += amount;
   }
 
-  public void debit(double amount) throws InsufficientBalance {
+  public void debit(double amount) throws InsuffBalException {
     if (this.balance < amount)
       // throw new IllegalArgumentException(); // Unchecked exception
-      // throw new BusinessException(ErrorCode.INSUFF_BAL); // Checked exception
-      throw new InsufficientBalance();
+      // throw new BusinessException(Error.INSUFF_BAL); // Checked exception
+      throw new InsuffBalException();
     this.balance -= amount;
   }
 
@@ -39,7 +39,7 @@ public class Account {
       ac.debit(50);
       ac.debit(51); // exception
     } catch (BusinessException e) {
-      System.out.println(e.getCodeWithMessage()); // Error -99: Withdrawal amount > Amount balance
+      System.out.println(e.getCodeWithMsg()); // Error -99: Withdrawal amount > Amount balance
     } finally {
       // Run no matter there is an exception or not
     }

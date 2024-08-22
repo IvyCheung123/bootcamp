@@ -13,16 +13,16 @@ public class BusinessException extends Exception {
   //   this.errorCode = errorCode;
   // }
 
-  public BusinessException(ErrorCode errorCode) {
-    super(errorCode.getMessage());
-    this.code = errorCode.getCode();
+  public BusinessException(Error error) {
+    super(error.getErrorMsg());
+    this.code = error.getErrorCode();
   }
 
   public int getCode() {
     return this.code;
   }
 
-  public String getCodeWithMessage() {
+  public String getCodeWithMsg() {
     return "Error " + this.code + ": " + this.getMessage();
   }
 }

@@ -3,7 +3,7 @@ import java.util.List;
 
 public class DemoBox {
   private List<Ball> balls;
-  private int capacity;
+  private int value;
 
   public DemoBox() {
     balls = new LinkedList<>();
@@ -18,8 +18,12 @@ public class DemoBox {
   }
 
   public class Ball {
-    public int getCapacity() {
-      return capacity;
+    public void setValue(int value) {
+      DemoBox.this.value = value;
+    }
+    
+    public int getValue() {
+      return DemoBox.this.value;
     }
   }
 }
