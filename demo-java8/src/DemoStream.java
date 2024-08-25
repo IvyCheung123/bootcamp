@@ -1,9 +1,14 @@
+import java.math.BigDecimal;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -57,11 +62,11 @@ public class DemoStream {
       .collect(Collectors.toList());
     System.out.println(customersAfterFilter); // [Customer(name=b, age=20), Customer(name=c, age=30)]
 
-    List<String> customersNameAfterFilter = customers.stream() // Stream<Customer>
-      .filter(c -> c.getName().length() >= 1) // Stream<Customer>
-      .map(c -> c.getName()) // Stream<String>
+    List<Integer> customersNameAfterFilter = customers.stream() // Stream<Customer>
+      .filter(c -> c.getAge() > 10) // Stream<Customer>
+      .map(c -> c.getAge()) // Stream<String>
       .collect(Collectors.toList()); // List<String>
-    System.out.println(customersNameAfterFilter); // [a, b, c]
+    System.out.println(customersNameAfterFilter); // [b, c]
 
     List<String> customersNameList = new ArrayList<>();
     for (Customer c : customers) {
@@ -177,8 +182,9 @@ public class DemoStream {
         System.out.println(i);
         return i + 1;
       });
-    System.out.println(integers4.count()); // 3, but not sysout 2 3 4
+    System.out.println(integers4.collect(Collectors.toList())); // 3, but not sysout 2 3 4
     // terminal operation observes interminate operations, check if they will make impact or not
     // so, finally map() won't execute, it will not affect the result of count()
+    System.out.println(integers4.count());
   }
 }
