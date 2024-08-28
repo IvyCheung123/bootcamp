@@ -22,7 +22,7 @@ public class DemoIncrement {
   public void increment3() {
     this.k++; // multi thread may access variable k for read/write
     int x = 0; // object will store until local block ends -> auto disappear
-    // 如果有兩個variables需要互相等待 rick ... 有機會行唔完
+    // 如果有兩個variables需要互相等待 risk ... 有機會行唔完
     synchronized (lock) { // locked a code block
       // lines of code ...
       this.x++;
