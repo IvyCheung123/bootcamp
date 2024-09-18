@@ -89,3 +89,4 @@ public class DemoHashTable {
     System.out.println(table2.size()); // 1
   }
 }
+
