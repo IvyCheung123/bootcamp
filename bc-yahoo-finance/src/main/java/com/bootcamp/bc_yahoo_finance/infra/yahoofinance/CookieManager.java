@@ -18,15 +18,6 @@ import com.bootcamp.bc_yahoo_finance.util.Scheme;
  */
 
 public class CookieManager {
-  private final String DOMAINE = "finance.yahoo.com";
-  private final String CRUMB_DOMAINE = "query1.finance.yahoo.com";
-
-  private final String VERSION_CRUMB = "v1";
-  private final String ENPOINT_CRUMB = "v1";
-
-  private final String VERSION_QUOTE = "v7";
-  private final String ENDPOINT_QUOTE = "finance/quote";
-
   private RestTemplate restTemplate;
 
   public CookieManager(RestTemplate restTemplate) {
@@ -37,10 +28,13 @@ public class CookieManager {
     try {
       String cookieUrl = UriComponentsBuilder.newInstance()
         .scheme(Scheme.HTTPS.name().toLowerCase())
-        .host(DOMAINE)
+        .host(YahooFinance.DOMAINE)
         .toUriString();
+      
       ResponseEntity<String> entity = this.restTemplate.getForEntity(cookieUrl, String.class);
+      
       List<String> cookies = entity.getHeaders().get("Set-Cookie");
+      
       return cookies != null ? cookies.get(0).split(";")[0] : null;
     } catch (RestClientException e) {
       if (e instanceof HttpStatusCodeException) {

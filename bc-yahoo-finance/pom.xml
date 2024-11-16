@@ -62,8 +62,9 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId> <!-- You can also use Lettuce if preferred -->
+			<groupId>org.apache.httpcomponents.client5</groupId>
+			<artifactId>httpclient5</artifactId>
+			<version>5.2.1</version>
 		</dependency>
 	</dependencies>
 
