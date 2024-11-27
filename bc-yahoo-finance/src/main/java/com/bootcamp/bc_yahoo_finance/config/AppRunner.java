@@ -26,7 +26,7 @@ public class AppRunner implements CommandLineRunner {
   public void run(String... args) throws Exception {
     this.stockSymbolService.deleteAll();
 
-    System.out.println("Starting server ...");
+    System.out.println("Server started successfully.");
 
     String[] symbols = new String[] {"0388.HK", "0700.HK", "0005.HK"};
 
@@ -38,6 +38,6 @@ public class AppRunner implements CommandLineRunner {
 
     // Redis
     this.redisHelper.set("STOCK-LIST", symbols);
-    System.out.println("Saving stock symbols to Redis ...");
+    System.out.println("Stock symbols saved to Redis successfully.");
   }
 }

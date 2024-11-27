@@ -21,4 +21,9 @@ public class StockSymbolServiceImpl implements StockSymbolService {
   public void deleteAll() {
     this.stockSymbolRepository.deleteAll();
   }
+
+  @Override
+  public List<StockSymbolEntity> findAll() {
+    return this.stockSymbolRepository.findAll();
+  }
 }

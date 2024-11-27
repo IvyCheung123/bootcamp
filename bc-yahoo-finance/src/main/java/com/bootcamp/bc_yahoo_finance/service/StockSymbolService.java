@@ -7,4 +7,6 @@ public interface StockSymbolService {
   List<StockSymbolEntity> saveAll(List<StockSymbolEntity> stockSymbolEntities);
 
   void deleteAll();
+
+  List<StockSymbolEntity> findAll();
 }

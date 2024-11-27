@@ -1,9 +1,13 @@
 server:
   port: 8085
 
+spring.jackson:
+  time-zone: GMT+8
+  date-format: yyyy-MM-dd HH:mm:ss
+
 spring.datasource:
   driverClassName: "org.postgresql.Driver"
-  url: "jdbc:postgresql://localhost:5432/bootcamp-bc-yahoo-finance"
+  url: "jdbc:postgresql://localhost:5432/postgres"
   username: "postgres"
   password: "admin1234"
 
