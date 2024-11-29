@@ -33,7 +33,7 @@ public class AppSchedular {
    * @Scheduled(cron = "0 0 0 1 * ?")
    */
 
-  @Scheduled(cron = "0 0/1 9-21 * * MON-FRI")
+  @Scheduled(cron = "0 0/5 9-16 * * MON-FRI")
   public void cronJob() throws JsonProcessingException {
     String[] arr = this.redisHelper.get("STOCK-LIST", String[].class);
 
